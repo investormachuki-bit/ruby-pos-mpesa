@@ -9,7 +9,7 @@ const consumerKey = "1BQnYUarvsdUYpMTSb0XsOkIrNJmhjomSFf0NudztmuXY0Zu";
 const consumerSecret = "5grfyRzmNXemSuyYbkZC9CkXOk7wb9I6kGm5elaPYB4fwgbMwC8CA8Veh86NCKZh";
 
 const shortcode = "174379";
-const passkey = "bfb279f9aa9bdbcf158c4e97ddbf3a383d..."; // use full passkey
+const passkey = "const passkey = "bfb279f9aa9bdbcf158c4e97ddbf3a383d9c8cbe4f0d7f3c9b9e2d5f1c7e3a8f9";"; // use full passkey
 
 // Generate access token
 async function getAccessToken() {
