@@ -111,10 +111,10 @@ app.get("/test", async (req, res) => {
     const response = await axios.post(
       "https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest",
       payload,
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
+      {headers: {
+  Authorization: `Bearer ${token}`,
+  "Content-Type": "application/json"
+},
       }
     );
 
