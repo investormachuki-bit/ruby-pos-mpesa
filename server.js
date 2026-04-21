@@ -5,8 +5,8 @@ const app = express();
 app.use(express.json());
 
 // 🔐 REPLACE THESE
-const consumerKey = "YOUR_CONSUMER_KEY";
-const consumerSecret = "YOUR_CONSUMER_SECRET";
+const consumerKey = "1BQnYUarvsdUYpMTSb0XsOkIrNJmhjomSFf0NudztmuXY0Zu";
+const consumerSecret = "5grfyRzmNXemSuyYbkZC9CkXOk7wb9I6kGm5elaPYB4fwgbMwC8CA8Veh86NCKZh";
 
 const shortcode = "174379";
 const passkey = "bfb279f9aa9bdbcf158c4e97ddbf3a383d..."; // use full passkey
