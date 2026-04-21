@@ -79,3 +79,46 @@ app.post("/callback", (req, res) => {
 });
 
 app.listen(3000, () => console.log("Server running on port 3000"));
+app.get("/test", async (req, res) => {
+  const phone = "254796594295";
+  const amount = 10;
+
+  try {
+    const token = await getAccessToken();
+
+    const timestamp = new Date()
+      .toISOString()
+      .replace(/[-:.TZ]/g, "")
+      .slice(0, 14);
+
+    const password = Buffer.from(shortcode + passkey + timestamp).toString("base64");
+
+    const payload = {
+      BusinessShortCode: shortcode,
+      Password: password,
+      Timestamp: timestamp,
+      TransactionType: "CustomerPayBillOnline",
+      Amount: amount,
+      PartyA: phone,
+      PartyB: shortcode,
+      PhoneNumber: phone,
+      CallBackURL: "https://ruby-pos-mpesa.onrender.com/callback",
+      AccountReference: "Ruby POS",
+      TransactionDesc: "Test Payment",
+    };
+
+    const response = await axios.post(
+      "https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest",
+      payload,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+
+    res.json(response.data);
+  } catch (err) {
+    res.status(500).json(err.response?.data || err.message);
+  }
+});
