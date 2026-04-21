@@ -49,7 +49,7 @@ app.post("/stkpush", async (req, res) => {
     PartyA: phone,
     PartyB: shortcode,
     PhoneNumber: phone,
-    CallBackURL: "https://YOUR-RENDER-URL/callback",
+    CallBackURL: "https://ruby-pos-mpesa.onrender.com/callback",
     AccountReference: "Ruby POS",
     TransactionDesc: "Subscription Payment",
   };
